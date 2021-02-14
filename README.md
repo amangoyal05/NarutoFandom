@@ -1,7 +1,6 @@
 <h2>Naruto Fandom</h2>
 
 <b>Introduction</b> - Naruto Fandom is a web app made using Django as the main framework, with Python on the back-end and Java on the fron-end. It is made keeping in mind the Naruto fan's community who would love to come together and interact with each other through various posts and be a part of the community.</br>
-<a href="https://youtu.be/wL9a9Vkt9_U">Here is a demo of my Final Project.</a>
 <hr>
 
 <h3>Languages And Tools Used :</h3></br>
