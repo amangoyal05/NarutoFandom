@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="C:\Users\AMAN\Desktop\naruto\fandom\static\fandom\login-register.css" type="text/css">
+
+     <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>Login</title>
+
+  </head>
+  
+  <body>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <img src="https://media1.tenor.com/images/2bdc5cb1e18c28bbee1a38a4aad49125/tenor.gif?itemid=8367751" class="rounded-circle" style="height: 150px;">
+        </div>
+        <form class="text-center border border-dark p-5" action="{% url 'dashboard' %}">
+
+          <p class="h4 mb-4">Login</p>
+
+          <!-- E-mail -->
+          <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+          <!-- Password -->
+          <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+          
+
+          <!-- Login button -->
+          <button class="btn btn-info my-4 btn-block" type="submit">Login</button>
+          <hr>
+          <a class="btn btn-primary" href="{% url 'home' %}" role="button">Home</a>
+          <a class="btn btn-primary" href="{% url 'register' %}" role="button">Register</a>
+        </form>
+    </div>
+    
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--Popper.js-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

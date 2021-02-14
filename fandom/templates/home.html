@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Meta Tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>{% block title %}Naruto Fandom{% endblock %}</title>
+
+
+        <!--Stylesheet-->
+        <link rel="stylesheet" href="{% static 'fandom/home.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <!-- Image and text -->
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="https://images.wikia.nocookie.net/__cb11/naruto/images/8/89/Wiki-wordmark.png" width="170" height="60" class="ontop" alt="">
+                Naruto Fandom
+                {% if user.is_authenticated %}
+                <li class="nav-item btn btn-outline-light float-right">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item btn btn-outline-light">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+              </nav>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                      </li>
+                      {% else %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                      </li>
+                      {% endif %}
+                  </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <div class="container">
+          <img src="https://wallpapercave.com/wp/wp3867557.jpg" width="100%;">
+          <div class="position">
+            <h1>Posts</h1>
+            <ul>
+            {% for post in object_list %}
+                <li><a class="text-dark" href="{% url 'article-detail' post.pk %}">{{ post.title }} - {{ post.author }}</a><br/></li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+    </body>
